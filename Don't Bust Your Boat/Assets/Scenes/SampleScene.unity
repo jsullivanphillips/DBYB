@@ -178,9 +178,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1db4c504f9c46247a2d2b81317147a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitude: 0.1
-  length: 6
-  speed: 2
+  amplitude: 0.4
+  length: 3
+  speed: 0.5
   offset: 1
 --- !u!23 &528761996
 MeshRenderer:
@@ -287,9 +287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1db4c504f9c46247a2d2b81317147a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitude: 0.1
-  length: 6
-  speed: 2
+  amplitude: 0.4
+  length: 3
+  speed: 0.5
   offset: 1
 --- !u!23 &701729634
 MeshRenderer:
@@ -396,9 +396,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1db4c504f9c46247a2d2b81317147a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitude: 0.1
-  length: 6
-  speed: 2
+  amplitude: 0.4
+  length: 3
+  speed: 0.5
   offset: 1
 --- !u!23 &854768066
 MeshRenderer:
@@ -735,9 +735,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1db4c504f9c46247a2d2b81317147a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitude: 0.1
-  length: 6
-  speed: 2
+  amplitude: 0.4
+  length: 3
+  speed: 0.5
   offset: 1
 --- !u!23 &1237286876
 MeshRenderer:
@@ -844,9 +844,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1db4c504f9c46247a2d2b81317147a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitude: 0.1
-  length: 6
-  speed: 2
+  amplitude: 0.4
+  length: 3
+  speed: 0.5
   offset: 1
 --- !u!23 &1540317928
 MeshRenderer:
@@ -959,9 +959,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1db4c504f9c46247a2d2b81317147a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitude: 0.1
-  length: 6
-  speed: 2
+  amplitude: 0.4
+  length: 3
+  speed: 0.5
   offset: 1
 --- !u!23 &2042645117
 MeshRenderer:
@@ -1035,6 +1035,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586909544544925414, guid: bc8ccc6ef05568941a2cfc4a165b4955,
+        type: 3}
+      propertyPath: amplitude
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586909544544925414, guid: bc8ccc6ef05568941a2cfc4a165b4955,
+        type: 3}
+      propertyPath: length
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3586909544544925414, guid: bc8ccc6ef05568941a2cfc4a165b4955,
+        type: 3}
+      propertyPath: speed
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3586909544544925415, guid: bc8ccc6ef05568941a2cfc4a165b4955,
         type: 3}
@@ -1143,7 +1158,7 @@ PrefabInstance:
     - target: {fileID: 6460240950151305007, guid: 1b3076f863a5d0e418c63f46f52cfd2a,
         type: 3}
       propertyPath: turnSpeed
-      value: 1.2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6460240950151305007, guid: 1b3076f863a5d0e418c63f46f52cfd2a,
         type: 3}
@@ -1163,12 +1178,12 @@ PrefabInstance:
     - target: {fileID: 6460240950151305007, guid: 1b3076f863a5d0e418c63f46f52cfd2a,
         type: 3}
       propertyPath: speed
-      value: 100
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6460240950151305007, guid: 1b3076f863a5d0e418c63f46f52cfd2a,
         type: 3}
       propertyPath: coeffecientOfLiquid
-      value: 0.5
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 6460240950151305008, guid: 1b3076f863a5d0e418c63f46f52cfd2a,
         type: 3}
@@ -1269,6 +1284,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6460240951941572233, guid: 1b3076f863a5d0e418c63f46f52cfd2a,
+        type: 3}
+      propertyPath: m_Drag
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b3076f863a5d0e418c63f46f52cfd2a, type: 3}

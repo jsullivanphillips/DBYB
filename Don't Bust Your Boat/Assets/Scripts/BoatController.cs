@@ -5,8 +5,6 @@ using UnityEngine;
 public class BoatController : MonoBehaviour
 {
     public Rigidbody boatRB;
-    public GameObject backRightFloater;
-    public GameObject backLeftFloater;
     public float speed = 2.0f;
     public float turnSpeed = 2.0f;
     public float engineRPM; 
@@ -17,7 +15,7 @@ public class BoatController : MonoBehaviour
     private bool gas;
     private float timer;
     private Vector3 moveSpeed = Vector3.zero;
-    
+    private float tiltReduction;
 
     // Start is called before the first frame update
     void Start()
@@ -38,18 +36,22 @@ public class BoatController : MonoBehaviour
         float dragForceX = -0.5f*((boatRB.velocity.x * boatRB.velocity.x) * (100/Mathf.Abs(transform.rotation.y - 180)) * coeffecientOfLiquid * normalBoatVel.x);
         
        
-        turnSpeedReduction = Mathf.Max(Mathf.Abs(boatRB.velocity.x), Mathf.Abs(boatRB.velocity.z));
-        turnSpeedReduction = Mathf.Clamp(turnSpeedReduction, 0f, 2f);
+        float curVel = Mathf.Abs(boatRB.velocity.x) +  Mathf.Abs(boatRB.velocity.z);
+        tiltReduction = Mathf.Clamp(curVel, 0.1f, 2.0f);
+
+        turnSpeedReduction = Mathf.Clamp(curVel, 0.1f, 1.0f);
         boatRB.AddForce(dragForceX, 0f, dragForceZ);
     }
 
     void HandleInput(){
         if(Input.GetKey("a")){
-            transform.Rotate(0f, -turnSpeed * (turnSpeedReduction/2 + 0.1f), 0f, Space.World);
+            boatRB.AddRelativeTorque(-Vector3.up * (turnSpeed * turnSpeedReduction));
+            boatRB.AddRelativeTorque(Vector3.forward * tiltReduction);
         }
         
         if(Input.GetKey("d")){
-            transform.Rotate(0f, turnSpeed * (turnSpeedReduction /2 + 0.1f), 0f, Space.World);
+            boatRB.AddRelativeTorque(Vector3.up * (turnSpeed * turnSpeedReduction));
+            boatRB.AddRelativeTorque(Vector3.forward * -tiltReduction);
         }
 
         if(Input.GetKey("space")){
